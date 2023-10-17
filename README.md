@@ -1,6 +1,6 @@
 # 100-Days-of-Go
 
-### Day 1-5: Getting Started with Go
+### [Day 1-5: Getting Started with Go](/Getting_started/)
 - Understand the basics: Setup Go environment, learn about variables, data types, and control structures.
 - Go through tutorials and online resources to get a feel for the language's syntax and structure.
 - Start with simple programs to print text, manipulate variables, and understand basic data types.
