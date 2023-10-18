@@ -5,7 +5,7 @@
 - Go through tutorials and online resources to get a feel for the language's syntax and structure.
 - Start with simple programs to print text, manipulate variables, and understand basic data types.
 
-### Day 6-10: [Deepening Knowledge](/Deepning_knowledge/)
+### Day 6-10: [Deepening Knowledge](/Deepening_knowledge/)
 - Dive into functions, arrays, slices, and maps.
 - Study pointers and their usage in Go.
 - Get familiar with packages, imports, and exporting names in Go.
