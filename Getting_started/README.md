@@ -2,7 +2,7 @@
 
 ## -
 
-### Day 1: Setting up Go Environment
+### Day 1: [Setting up Go Environment](/Getting_started/Day-1/)
 
 Task:
 
@@ -15,7 +15,7 @@ Notes:
 - Set the GOPATH and GOROOT environment variables.
 - Verify the installation by running a simple "Hello, World!" program.
 
-### Day 2: Understanding Variables and Data Types
+### Day 2: [Understanding Variables and Data Types](/Getting_started/Day-2/)
 
 Task:
 
@@ -28,7 +28,7 @@ Notes:
 - Basic data types include int, float64, string, and bool.
 - Variables can be declared using the var keyword followed by the variable name and type.
 
-### Day 3: Control Structures in Go
+### Day 3: [Control Structures in Go](/Getting_started/Day-3/)
 
 Task:
 
@@ -40,7 +40,7 @@ Notes:
 - Go uses curly braces for defining blocks of code within control structures.
 - Use "if" for conditional statements, "for" for loops, and "switch" for multiple branching.
 
-### Day 4: Functions in Go
+### Day 4: [Functions in Go](/Getting_started/Day-4/)
 
 Task:
 
@@ -53,7 +53,7 @@ Notes:
 - They can have multiple parameters and return values.
 - Functions can also return multiple values simultaneously.
 
-### Day 5: Arrays, Slices, and Maps
+### Day 5: [Arrays, Slices, and Maps](/Getting_started/Day-5/)
 
 Task:
 
