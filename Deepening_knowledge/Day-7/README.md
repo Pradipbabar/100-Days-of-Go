@@ -1,6 +1,6 @@
 # Day 7
 
-## Pointers and Structs
+## Pointers, Structs and Methods 
 
 ### Pointers
 
@@ -122,3 +122,58 @@ type Employee struct {
 }
 ```
 
+### Methods 
+
+In Go, methods are functions that operate on a specific type. They are associated with the type they operate on and enable you to define behavior for that type. Methods in Go are similar to methods in other programming languages but have some distinctive features that make them particularly powerful and flexible.
+
+### Syntax for Declaring a Method in Go:
+
+You can declare a method for a type using the following syntax:
+
+```go
+func (t Type) methodName(parameterList) {
+    // Method implementation
+}
+```
+
+where:
+- `t` is the receiver, which can be a value or a pointer.
+- `Type` is the type the method operates on.
+- `methodName` is the name of the method.
+
+### Methods with Value Receivers and Pointer Receivers:
+
+In Go, methods can have either value receivers or pointer receivers. Value receivers operate on a copy of the data, while pointer receivers operate on the actual data. Here's an example of both types of methods:
+
+```go
+// Value receiver method
+func (p Person) introduce() {
+    fmt.Printf("Hi, my name is %s and I am %d years old.\n", p.name, p.age)
+}
+
+// Pointer receiver method
+func (p *Person) changeName(newName string) {
+    p.name = newName
+}
+```
+
+### Method Invocation in Go:
+
+You can call methods on an instance of a type using the dot (`.`) operator. Here's an example:
+
+```go
+p := Person{name: "John", age: 30}
+p.introduce() // Calling the value receiver method
+p.changeName("Mike") // Calling the pointer receiver method
+```
+
+### Method Sets in Go:
+
+A method set is the set of methods that can be called on a specific type. It includes methods with both value receivers and pointer receivers. Understanding method sets is essential when working with interfaces in Go.
+
+### Important Notes:
+
+- Go does not support method overloading or method overriding, but it does support method receivers of the same name on different types.
+- You can define methods for any named type in Go, not just structs.
+
+Methods in Go enable you to add behavior to your types and provide a convenient way to organize and encapsulate functionality. They play a crucial role in defining the behavior of user-defined types and are widely used in Go programming for creating efficient and expressive code.
