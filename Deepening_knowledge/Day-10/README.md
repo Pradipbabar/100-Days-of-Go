@@ -2,7 +2,6 @@
 
 ## Advanced Data Structures
 
-
 - **Linked Lists**: Linked lists are used when you need dynamic memory allocation, efficient insertion, and deletion of elements, and when the size of the data is not fixed. They are commonly used in implementing other data structures such as stacks and queues.
 
 - **Queues**: Queues are used in scenarios where the order of processing elements is important, such as in task scheduling, breadth-first search, or handling requests in networking.
@@ -21,3 +20,4 @@
 
 - **Graphs**: Graphs are a collection of nodes (vertices) connected by edges. They are used to represent networks of interconnected objects and are fundamental in various fields such as computer networking, data processing, and social network analysis.
 
+### [Arrays, Slices, and Maps](/Getting_started/Day-5/)
