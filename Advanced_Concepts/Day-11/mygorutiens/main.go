@@ -3,7 +3,15 @@ package main
 import (
     "fmt"
     "time"
+
 )
+
+func greeter(s string) {
+	for i := 0; i < 6; i++ {
+		time.Sleep(1 * time.Second)
+		fmt.Println(s)
+	}
+}
 
 func f(from string) {
     for i := 0; i < 3; i++ {
@@ -11,7 +19,11 @@ func f(from string) {
     }
 }
 
+
 func main() {
+
+	go greeter("Hello")
+	greeter("world")
 
     f("direct")
 
@@ -23,4 +35,7 @@ func main() {
 
     time.Sleep(time.Second)
     fmt.Println("done")
+
+
+
 }
