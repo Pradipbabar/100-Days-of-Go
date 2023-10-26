@@ -1,7 +1,7 @@
 
 # Day 6-10: Deepening Knowledge
 
-### Day 6: Deepening Knowledge of Functions and Packages
+## Day 6: [Deepening Knowledge of Functions and Packages](/Deepening_knowledge/Day-6/)
 
 Task:
 
@@ -14,7 +14,7 @@ Notes:
 - Closures are functions that reference variables from outside their body.
 - Packages help organize Go code into reusable components and facilitate modularity.
 
-### Day 7: Pointers and Structs
+## Day 7: [Pointers and Structs](/Deepening_knowledge/Day-7/)
 
 Task:
 
@@ -27,7 +27,7 @@ Notes:
 - They are used to share data across functions efficiently.
 - Structs allow you to create your own data types by combining multiple fields.
 
-### Day 8: Working with Errors
+## Day 8: [Working with Errors](/Deepening_knowledge/Day-8/)
 
 Task:
 
@@ -40,7 +40,7 @@ Notes:
 - Use the `errors` package to create custom error types.
 - Proper error handling is crucial for writing reliable and robust code.
 
-### Day 9: Understanding Interfaces
+## Day 9: [Understanding Interfaces](/Deepening_knowledge/Day-9/)
 
 Task:
 
@@ -53,7 +53,7 @@ Notes:
 - A type in Go implements an interface if it implements all the methods declared by the interface.
 - Interfaces allow for writing highly adaptable and flexible code.
 
-### Day 10: Advanced Data Structures
+## Day 10: [Advanced Data Structures](/Deepening_knowledge/Day-10/)
 
 Task:
 
