@@ -22,7 +22,7 @@ In Go, testing is a crucial part of the development process, and the language pr
 4. **Running Tests**: Go provides the `go test` command to run tests. By default, it looks for any tests in files with a `_test.go` suffix in the current directory and its subdirectories.
 
    ```
-   go test
+      go test
    ```
 
 5. **Test Coverage**: Go also supports test coverage analysis. You can use the `-cover` flag with `go test` to generate a coverage report, which indicates how much of your code is covered by tests.
