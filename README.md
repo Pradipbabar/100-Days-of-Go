@@ -39,8 +39,6 @@
 - Create a scalable microservices architecture using Go and containers like Docker.
 - Build a real-time chat application using WebSockets and Go.
 
-Certainly, here's a plan for your learning journey from day 60 to day 100, along with advanced project ideas:
-
 ### Day 60-75: [Advanced Topics in Go](/Advanced_topics/)
 - Explore advanced topics such as reflection and type assertions in Go.
 - Learn about context and its importance in managing and canceling long-running operations.
