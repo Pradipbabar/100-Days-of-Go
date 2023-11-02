@@ -5,3 +5,4 @@
 ### Sources
 
 - <https://medium.com/@ansujain/mastering-middleware-in-go-tips-tricks-and-real-world-use-cases-79215e72b4a8>
+- <https://dev.to/theghostmac/understanding-and-crafting-http-middlewares-in-go-3183>
