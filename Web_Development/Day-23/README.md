@@ -62,3 +62,9 @@ func main() {
 ```
 
 This example demonstrates how to connect to a PostgreSQL database using GORM, create a `User` model, and perform basic CRUD operations such as creating, reading, updating, and deleting records. You can adjust the database connection settings and model structure based on your specific use case and database configuration. Understanding these techniques can empower you to effectively manage data in your Go applications and interact with different types of databases efficiently.
+
+### Sources
+
+- <https://earthly.dev/blog/using-gorm-go/>
+- <https://dev.to/techschoolguru/generate-crud-golang-code-from-sql-and-compare-db-sql-gorm-sqlx-sqlc-560j>
+- <https://medium.com/mercadolibre-tech/go-language-relational-databases-and-orms-682a5fd3bbb6>
