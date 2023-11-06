@@ -1,15 +1,14 @@
 package main
 
 import (
-	"log"
-	"net/http"
 	"encoding/json"
+	"fmt"
+	"log"
 	"net/http"
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
 )
-
 
 var jwtKey = []byte("secret_key")
 
