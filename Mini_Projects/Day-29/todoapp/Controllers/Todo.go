@@ -14,19 +14,27 @@ func GetTodos(c *gin.Context) {
 	if err != nil {
 		c.AbortWithStatus(http.StatusNotFound)
 	} else {
-		c.JSON(http.StatusOK, todo)
+		// c.JSON(http.StatusOK, todo)
+		c.HTML(http.StatusOK, "index.html", gin.H{
+			"todos": todo,
+		})
 	}
 }
 
 func CreateATodo(c *gin.Context) {
 	var todo Models.Todo
-	c.BindJSON(&todo)
-	err := Models.CreateATodo(&todo)
-	if err != nil {
-		c.AbortWithStatus(http.StatusNotFound)
-	} else {
-		c.JSON(http.StatusOK, todo)
+	title := c.PostForm("title")
+	description := c.PostForm("description")
+	todo.Title = title
+	todo.Description = description
+
+	if err := Models.CreateATodo(&todo); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
 	}
+
+	// c.JSON(http.StatusOK, todo)
+	c.Redirect(http.StatusSeeOther, "/v1/todo")
 }
 
 func GetATodo(c *gin.Context) {
