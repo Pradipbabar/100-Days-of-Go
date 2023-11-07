@@ -6,6 +6,7 @@ import (
 	"todoapp/Config"
 	"todoapp/Models"
 	"todoapp/Routes"
+
 	"github.com/jinzhu/gorm"
 )
 
@@ -16,7 +17,7 @@ func main() {
 	Config.DB, err = gorm.Open("mysql", Config.DbURL(Config.BuildDBConfig()))
 
 	if err != nil {
-		fmt.Println("statuse: ", err)
+		fmt.Println("status: ", err)
 	}
 
 	defer Config.DB.Close()
