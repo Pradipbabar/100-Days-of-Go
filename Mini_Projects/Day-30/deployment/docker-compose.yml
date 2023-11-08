@@ -1,0 +1,23 @@
+version: '2.11.2'
+services:
+  mysql:
+    build:
+      context: .
+      dockerfile: ./mysqldb/Dockerfile
+    image: mysql-goapp:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: todos
+
+  goapp:
+    build:
+      context: .
+      dockerfile: ./goapp/Dockerfile  
+    image: pradipbabar/goapp:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql

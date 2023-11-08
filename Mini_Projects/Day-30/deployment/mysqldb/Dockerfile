@@ -1,0 +1,8 @@
+FROM mysql:latest
+
+ENV  MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+ENV  MYSQL_DATABASE: todos
+
+EXPOSE 3306
+      
+    
