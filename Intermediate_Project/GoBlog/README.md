@@ -13,7 +13,7 @@ This is a simple blogging website created using Go Fiber for the backend, MySQL 
 
 ## Prerequisites
 
-- Go 1.16 or higher
+- Go 1.21 or higher
 - Node.js and npm
 - MySQL database
 
@@ -41,6 +41,6 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 
 ## Acknowledgements
 
-Special thanks to the creators and contributors of Go Fiber, MySQL, React, and Tailwind CSS for their amazing tools and libraries that made this project possible.
-
-.
+- Special thanks to the creators and contributors of Go Fiber, MySQL, React, and Tailwind CSS for their amazing tools and libraries that made this project possible.
+- Special thanks to the creator @kingztech2019 [View Backend](https://github.com/kingztech2019/go-blogbackend) [View Frontend](https://github.com/kingztech2019/react-blog)
+ 
