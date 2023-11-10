@@ -30,9 +30,9 @@
 - Work on small projects to apply the knowledge, such as building a simple CRUD (Create, Read, Update, Delete) application, a command-line tool, or a basic web application.
 
 ### Day 31-45: [Intermediate Projects](/Intermediate_Project/)
-- Develop a RESTful API using Go and a lightweight database like SQLite.
-- Build a simple web server or a microservice using Go.
-- Create a command-line tool that performs a specific function, like data manipulation or automation.
+- Develop a blog web app using Go for efficient backend processing.
+- Utilize MySQL for structured storage and retrieval of blog data.
+- Implement a user-friendly web interface with responsive design using Go's web frameworks.
 
 ### Day 46-60: [Advanced Projects](/Advanced_Project/)
 - Develop a web application using a relational database like PostgreSQL or MySQL.
