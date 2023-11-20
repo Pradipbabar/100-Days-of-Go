@@ -43,4 +43,3 @@ Contributions are welcome! Please feel free to fork the repository and submit pu
 
 - Special thanks to the creators and contributors of Go Fiber, MySQL, React, and Tailwind CSS for their amazing tools and libraries that made this project possible.
 - Special thanks to the creator @kingztech2019 [View Backend](https://github.com/kingztech2019/go-blogbackend) [View Frontend](https://github.com/kingztech2019/react-blog)
- 
