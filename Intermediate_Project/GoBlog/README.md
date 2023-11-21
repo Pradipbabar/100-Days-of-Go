@@ -22,7 +22,7 @@ This is a simple blogging website created using Go Fiber for the backend, MySQL 
 1. Clone the repository.
 2. Set up the MySQL database and configure the connection details in the Go backend.
 3. Install frontend dependencies using `npm install` in the `frontend` directory.
-4. Run the backend server using `go run main.go` in the root directory.
+4. Run the backend server using `go run main.go` in the `Backend` directory.
 5. Start the frontend server using `npm start` in the `frontend` directory.
 
 ## Folder Structure
