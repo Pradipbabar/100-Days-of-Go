@@ -1,9 +1,8 @@
-# Day 31-45: Intermediate Projects
+# Day 31-45: Intermediate Project
 
 ## GoFiber Blogging Website
 
-Welcome to the GoFiber Blogging Website project! This project aims to create a simple blogging platform using Go Fiber for the backend, MySQL for the database, and React for the frontend.
-
+ This project aims to create a simple blogging platform using Go Fiber for the backend, MySQL for the database, and React for the frontend.
 
 ### Day 31-35: Setting Up the Project
 
