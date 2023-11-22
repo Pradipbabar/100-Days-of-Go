@@ -1,51 +1,30 @@
 # Day 31-45: Intermediate Projects
 
-### Day 31: Project Review and Refactoring
-Task:
-- Review the projects and code written so far.
-- Practice refactoring the codebase for improved efficiency and readability.
+## GoFiber Blogging Website
 
-Notes:
-- Analyze the code for potential optimizations and improvements.
-- Refactor the codebase by applying best practices and design patterns.
-- Document the changes made and the reasons behind them.
+Welcome to the GoFiber Blogging Website project! This project aims to create a simple blogging platform using Go Fiber for the backend, MySQL for the database, and React for the frontend.
 
-### Day 32-35: Intermediate Project Development
-Task:
-- Start working on a mid-level project, such as a simple RESTful API or a web application with basic CRUD functionality.
-- Implement authentication and authorization mechanisms for the project.
 
-Notes:
-- Plan the project structure and design the database schema.
-- Implement CRUD operations for the project's data models.
-- Incorporate authentication and authorization for securing the application.
+### Day 31-35: Setting Up the Project
 
-### Day 36-40: Database Management and Optimization
-Task:
-- Learn advanced database management techniques for improving the performance of your Go applications.
-- Explore indexing, caching, and other optimization strategies.
+- [x] Initialize Go module (`go mod init`)
+- [x] Set up the Go Fiber application structure
+- [x] Create basic routes for blog posts (GET, POST, PUT, DELETE)
+- [x] Set up MySQL database and configure the connection
+- [x] Implement basic CRUD operations for blog posts in Go
 
-Notes:
-- Implement database indexing for improving query performance.
-- Integrate caching mechanisms to reduce database load and improve response times.
-- Optimize database queries and transactions for enhanced efficiency.
+### Day 36-40: Designing the Frontend
 
-### Day 41-43: Advanced Web Application Development
-Task:
-- Dive deeper into web application development by integrating advanced features such as real-time communication, file uploading, and data validation.
-- Explore the usage of WebSocket for real-time communication.
+- [x] Initialize a React app in the `frontend` directory
+- [x] Create components for listing, adding, updating, and deleting blog posts
+- [x] Connect the React app to the Go Fiber backend
+- [x] Implement forms for adding and updating blog posts
+- [x] Style the frontend using a simple CSS framework or styling library
 
-Notes:
-- Implement WebSocket communication for real-time features.
-- Develop functionality for uploading and managing files within the web application.
-- Apply advanced data validation techniques to ensure data integrity and security.
+### Day 41-45: Enhancing the Functionality
 
-### Day 44-45: Project Testing and Documentation
-Task:
-- Write comprehensive test cases to cover different scenarios in your project.
-- Document the project thoroughly, including the project's functionalities, APIs, and usage instructions.
-
-Notes:
-- Write unit tests and integration tests for your project's components.
-- Generate documentation for the project, including API endpoints and usage instructions.
-- Ensure that the tests are comprehensive and cover all critical aspects of the project.
+- [x] Add user authentication (optional)
+- [x] Implement pagination for blog posts
+- [x] Integrate a rich text editor for writing blog content
+- [x] Implement basic error handling and validation
+- [x] Test the application thoroughly and fix any issues
