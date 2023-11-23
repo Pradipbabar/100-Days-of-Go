@@ -35,9 +35,10 @@
 - Implement a user-friendly web interface with responsive design using Go's web frameworks.
 
 ### Day 46-60: [Advanced Projects](/Advanced_Project/)
-- Develop a web application using a relational database like PostgreSQL or MySQL.
-- Create a scalable microservices architecture using Go and containers like Docker.
 - Build a real-time chat application using WebSockets and Go.
+- Dockerize the application using docker-compose.
+- Deploy to minikube.
+- Implement CI/CD with Jenkins.
 
 ### Day 60-75: [Advanced Topics in Go](/Advanced_topics/)
 - Explore advanced topics such as reflection and type assertions in Go.
