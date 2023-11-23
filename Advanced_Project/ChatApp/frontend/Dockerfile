@@ -1,19 +1,12 @@
 # Stage 1: Build stage
-FROM node:14-alpine AS builder
+FROM node:21-alpine AS builder
 
 WORKDIR /app
-
-# Install build dependencies
-RUN apk add --no-cache --virtual .build-deps \
-    python \
-    make \
-    g++ \
-    && apk del .build-deps
 
 COPY package.json .
 
 # Install dependencies for building
-RUN npm install --production --force
+RUN npm install --production 
 
 COPY . .
 
@@ -21,7 +14,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Final stage
-FROM node:14-alpine
+FROM node:21-alpine
 
 WORKDIR /app
 
