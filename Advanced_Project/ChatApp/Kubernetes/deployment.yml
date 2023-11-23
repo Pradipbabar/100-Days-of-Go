@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: goapp
+  template:
+    metadata:
+      labels:
+        app: goapp
+    spec:
+      containers:
+      - name: goapp-front
+        image: pradipbabar/goapp-frontend:latest
+        ports:
+        - containerPort: 3000
+      - name: goapp-back
+        image: pradipbabar/goapp-backend:latest
+        ports:
+        - containerPort: 9000
