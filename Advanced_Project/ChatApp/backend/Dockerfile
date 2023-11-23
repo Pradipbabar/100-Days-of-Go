@@ -2,7 +2,7 @@
 FROM golang:alpine3.16 AS builder
 
 RUN mkdir /app
-ADD . /app
+ADD ./backend /app
 WORKDIR /app
 
 # Build the application

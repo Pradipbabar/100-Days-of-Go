@@ -1,0 +1,32 @@
+version: "2.10"
+services:
+
+  goapp-backend:
+    build: 
+      context: .
+      dockerfile: ./backend/Dockerfile
+      args:
+        IMAGE_NAME: ${IMAGE_NAME:-pradipbabar/goapp-backend}
+        IMAGE_TAG: ${IMAGE_TAG:-latest}
+    container_name: goapp-backend
+    image: ${IMAGE_NAME}:${IMAGE_TAG}
+    mem_limit: 1G
+    mem_reservation: 1G
+    ports:
+      - "9000:9000"
+
+  goapp-frontend:
+    build: 
+      context: .
+      dockerfile: ./frontend/Dockerfile
+      args:
+        IMAGE_NAME: ${IMAGE_NAME:-pradipbabar/goapp-frontend}
+        IMAGE_TAG: ${IMAGE_TAG:-latest}
+    container_name: goapp-frontend
+    image: ${IMAGE_NAME}:${IMAGE_TAG}
+    mem_limit: 1G
+    mem_reservation: 1G
+    ports:
+      - "3000:3000"
+    depends_on:
+       - goapp-backend
