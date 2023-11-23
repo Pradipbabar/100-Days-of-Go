@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: goapp-pod
+spec:
+  containers:
+  - name: goapp-front
+    image: pradipbabar/goapp-frontend:latest 
+    ports:
+    - containerPort: 3000
+  - name: goapp-back
+    image: pradipbabar/goapp-backend:latest
+    ports:
+    - containerPort: 9000
