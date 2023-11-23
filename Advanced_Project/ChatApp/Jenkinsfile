@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials-id') // Replace with your Docker Hub credentials ID
+    }
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build and Push Docker Images') {
+            steps {
+                script {
+                    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: DOCKER_HUB_CREDENTIALS, usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]) {
+                        sh 'docker-compose build --build-arg IMAGE_NAME=my-goapp --build-arg IMAGE_TAG=${BUILD_NUMBER}'
+                        sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
+                        sh 'docker-compose push'
+                    }
+                }
+            }
+        }
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    withCredentials([[$class: 'SecretText', credentialsId: 'kubeconfig-credentials-id', secretVariable: 'KUBECONFIG']]) {
+                        writeFile file: 'kubeconfig', text: KUBECONFIG
+                        sh 'kubectl apply -f deployment.yaml -f service.yaml --kubeconfig=kubeconfig'
+                    }
+                }
+            }
+        }
+    }
+}
