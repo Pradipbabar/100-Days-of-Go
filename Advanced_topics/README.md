@@ -13,7 +13,7 @@ Notes:
 - Implement parallel processing techniques for improving the performance of CPU-bound tasks.
 - Understand advanced synchronization mechanisms for concurrent data access and modification.
 
-## Day 66-70: [Advanced Data Storage and Retrieval](/Advanced_topics/Data_Storage_and_%20Retrieval/)
+## Day 66-70: [Advanced Data Storage and Retrieval](/Advanced_topics/Data_Storage_and_Retrieval/)
 
 Task:
 
@@ -26,7 +26,7 @@ Notes:
 - Implement advanced data retrieval techniques, including aggregation and indexing.
 - Understand the trade-offs between different types of databases for specific use cases.
 
-## Day 71-73: Cloud Computing and Deployment
+## Day 71-73: [Cloud Computing and Deployment](/Advanced_topics/Cloud_Computing_and_Deployment/)
 
 Task:
 
@@ -39,7 +39,7 @@ Notes:
 - Explore containerization using tools like Docker for creating portable and scalable environments.
 - Learn about orchestration tools such as Kubernetes for managing containerized applications in the cloud.
 
-## Day 74-75: Advanced Networking and Security
+## Day 74-75: [Advanced Networking and Security](/Advanced_topics/Networking_and_Security/)
 
 Task:
 
