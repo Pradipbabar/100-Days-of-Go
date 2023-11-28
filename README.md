@@ -46,9 +46,9 @@
 - Study advanced concurrency patterns and best practices for parallelism.
 
 ### Day 76-90: [Deep Dive into Frameworks and Tools](/Framworks_and_Tools/)
-- Dive deeper into popular Go frameworks such as Revel and Beego for web development.
-- Learn about tools like dep and modules for managing dependencies in Go projects.
-- Understand how to work with popular databases like MongoDB, Redis, and Cassandra using Go.
+- Explore Docker SDK for Go, Kubernetes client library (client-go), and container orchestration concepts.
+- Integrate Go with Terraform, extend Ansible with Go modules, and use Packer with Go for Infrastructure as Code.
+- Implement Prometheus and Grafana integration for monitoring, develop Grafana dashboards in Go, and establish advanced logging solutions
 
 ### Day 91-100: [Advanced Projects](/Last_but_not_Least/)
 - Build a scalable and secure RESTful API using JWT (JSON Web Tokens) for authentication and authorization.
