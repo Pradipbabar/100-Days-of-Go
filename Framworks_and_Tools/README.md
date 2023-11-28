@@ -1,41 +1,45 @@
 # Day 76-90: Deep Dive into Frameworks and Tools
 
-### Day 76-80: Advanced Networking and Security
-Task:
-- Deepen your understanding of advanced networking concepts and security measures in Go.
-- Explore secure communication protocols, encryption, and decryption techniques.
+Day 76-80: Containerization with Go
 
-Notes:
-- Learn about secure communication protocols such as TLS/SSL for securing network connections.
-- Implement encryption and decryption techniques for securing data transmission.
-- Explore best practices for securing sensitive data and preventing common security vulnerabilities.
+- **Day 76-77: Docker SDK for Go**
+  - Learn about the Docker SDK for Go.
+  - Develop Go applications that interact with Docker, enabling container management.
 
-### Day 81-85: Advanced Web Development Techniques
-Task:
-- Dive deeper into advanced web development techniques, including handling complex HTTP requests, implementing middleware, and integrating third-party APIs.
-- Explore the development of microservices architecture and serverless applications using Go.
+- **Day 78-79: Kubernetes Client in Go**
+  - Explore the Kubernetes client library for Go (client-go).
+  - Develop applications to interact with Kubernetes clusters programmatically.
 
-Notes:
-- Implement complex HTTP request handling for managing file uploads, handling authentication, and more.
-- Develop custom middleware for logging, authentication, and other functionalities in Go web applications.
-- Learn about building microservices and serverless applications using Go and relevant cloud services.
+- **Day 80: Container Orchestration**
+  - Dive into container orchestration concepts.
+  - Explore tools like Kubernetes and Docker Swarm for orchestrating and managing containerized applications.
 
-### Day 86-88: Performance Tuning and Optimization
-Task:
-- Focus on fine-tuning and optimizing the performance of your Go applications.
-- Learn about memory management, profiling, and optimizing resource utilization.
+Day 81-85: Infrastructure as Code (IaC) with Go
 
-Notes:
-- Optimize memory usage through efficient memory management techniques in Go.
-- Use profiling tools to identify performance bottlenecks and optimize critical sections of the code.
-- Implement strategies for optimizing resource utilization and improving overall application performance.
+- **Day 81-82: Terraform and Go**
+  - Integrate Go with Terraform for infrastructure provisioning.
+  - Build and manage cloud resources using Terraform and Go.
 
-### Day 89-90: Project Deployment and Presentation
-Task:
-- Deploy your advanced Go project to a production environment.
-- Prepare and deliver a comprehensive presentation highlighting the project's features, technical implementation, and its impact.
+- **Day 83-84: Ansible Go Modules**
+  - Explore Ansible Go modules for extending Ansible with custom Go modules.
+  - Enhance infrastructure automation with Ansible and Go.
 
-Notes:
-- Deploy the advanced Go project to a cloud platform or a dedicated server.
-- Ensure the application is running smoothly in the production environment and is accessible to users.
-- Prepare a detailed presentation outlining the project's objectives, challenges faced, technical solutions, and the overall impact of the project.
+- **Day 85: Packer and Go**
+  - Learn to use Packer with Go for creating machine images.
+  - Automate image building and provisioning for various platforms.
+
+Day 86-90: DevOps Monitoring and Logging with Go
+
+- **Day 86-87: Prometheus and Go**
+  - Integrate Go applications with Prometheus for monitoring.
+  - Implement custom metrics and instrumentation.
+
+- **Day 88-89: Grafana Dashboards with Go**
+  - Develop Grafana dashboards for visualizing metrics from Go applications.
+  - Explore Grafana's integration capabilities with Go.
+
+- **Day 90: Logging Solutions in Go**
+  - Implement advanced logging solutions using Go.
+  - Explore tools like ELK (Elasticsearch, Logstash, Kibana) for log aggregation and analysis.
+
+These tasks cover various frameworks and tools crucial for a DevOps engineer, including containerization, infrastructure as code, and monitoring/logging solutions using Go.
