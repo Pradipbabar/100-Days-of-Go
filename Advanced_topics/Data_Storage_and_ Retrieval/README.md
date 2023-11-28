@@ -1,4 +1,4 @@
-# Advanced Data Storage and Retrieval
+# Data Storage and Retrieval
 
 ## Introduction to Advanced Data Storage and Retrieval
 
