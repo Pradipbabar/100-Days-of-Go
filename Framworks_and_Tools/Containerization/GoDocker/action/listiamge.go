@@ -15,7 +15,7 @@ func ListImagePackages(client client.Client) error {
 		return err
 	}
 
-	// Print package names for each image
+	// Print package names for each image 
 	for _, image := range images {
 		for _, tag := range image.RepoTags {
 			fmt.Printf("Image: %s\n", tag)

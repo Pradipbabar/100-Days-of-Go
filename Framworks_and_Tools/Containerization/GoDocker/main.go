@@ -21,6 +21,9 @@ func main()  {
 	// // Remove Container
 	// action.RemoveContainer(cli, "ContainerName")
 
+	// List Image
+	action.ListImagePackages(cli)
+
 	// Build Image 
 	// Client, imagename and Dockerfile location
 	tags := []string{"this_is_a_imagename"}
@@ -41,4 +44,5 @@ func main()  {
 		log.Println(err)
 	}
 
+	
 }
