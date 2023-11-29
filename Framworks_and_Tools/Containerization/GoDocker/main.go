@@ -3,8 +3,6 @@ package main
 import (
 	"godocker/action"
 	"github.com/docker/docker/client"
-
-
 )
 
 func main()  {
