@@ -8,10 +8,10 @@ import (
 	"github.com/docker/docker/client"
 )
 
-func listAllContainer(cli *client.Client) error{
+func listAllContainer(client *client.Client) error{
 
 	// List containers
-	containers, err := cli.ContainerList(context.Background(), nil)
+	containers, err := client.ContainerList(context.Background(), nil)
 	if err != nil {
 		log.Fatal(err)
     return err
