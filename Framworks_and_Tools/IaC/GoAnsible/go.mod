@@ -1,0 +1,3 @@
+module goansible
+
+go 1.21.3
