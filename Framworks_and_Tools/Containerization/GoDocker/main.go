@@ -15,4 +15,12 @@ func main()  {
 
 	// List All Containers
 	action.listAllContainer(cli)
+
+	// Stop Container
+	action.stopContainer(cli, "ContainerName")
+
+	// Remove Container
+	action.RemoveContainer(cli, "ContainerName")
+
+
 }
