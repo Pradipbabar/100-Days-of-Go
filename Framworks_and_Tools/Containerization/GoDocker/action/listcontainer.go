@@ -6,12 +6,13 @@ import (
 	"log"
 
 	"github.com/docker/docker/client"
+	"github.com/docker/docker/api/types"
 )
 
-func listAllContainer(client *client.Client) {
+func ListAllContainer(client *client.Client) {
 
 	// List containers
-	containers, err := client.ContainerList(context.Background())
+	containers, err := client.ContainerList(context.Background(),types.ContainerListOptions{} )
 	if err != nil {
 		log.Fatal(err)
 		// return err

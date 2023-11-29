@@ -5,12 +5,13 @@ import (
 	"log"
 
 	"github.com/docker/docker/client"
+	"github.com/docker/docker/api/types/container"
 )
 
-func stopContainer(client *client.Client, containername string) {
+func StopContainer(client *client.Client, containername string) {
 	ctx := context.Background()
 
-	if err := client.ContainerStop(ctx, containername); err != nil {
+	if err := client.ContainerStop(ctx, containername, container.StopOptions{}); err != nil {
 		log.Printf("Unable to stop container %s: %s", containername, err)
 		// return err
 	} else {
