@@ -1,17 +1,16 @@
 package action
+
 import (
-	"log"
-	"fmt"
 	"context"
+	"log"
 
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/client"
 )
 
 // Stop and remove a container
-func RemoveContainer(client *client.Client, containername string) error {
+func RemoveContainer(client *client.Client, containername string) {
 	ctx := context.Background()
-
 
 	removeOptions := types.ContainerRemoveOptions{
 		RemoveVolumes: true,
@@ -20,8 +19,8 @@ func RemoveContainer(client *client.Client, containername string) error {
 
 	if err := client.ContainerRemove(ctx, containername, removeOptions); err != nil {
 		log.Printf("Unable to remove container: %s", err)
-		return err
-	} 
+		// return err
+	}
 
-	return nil
+	// return nil
 }

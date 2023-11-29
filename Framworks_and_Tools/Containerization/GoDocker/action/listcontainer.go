@@ -8,13 +8,13 @@ import (
 	"github.com/docker/docker/client"
 )
 
-func listAllContainer(client *client.Client) error{
+func listAllContainer(client *client.Client) {
 
 	// List containers
-	containers, err := client.ContainerList(context.Background(), nil)
+	containers, err := client.ContainerList(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    return err
+		// return err
 
 	}
 
@@ -26,5 +26,5 @@ func listAllContainer(client *client.Client) error{
 		fmt.Printf("Status: %s\n", container.Status)
 		fmt.Println("---------------------------")
 	}
-  return nil
+	// return nil
 }
