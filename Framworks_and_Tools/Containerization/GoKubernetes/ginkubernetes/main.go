@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"ginkubernetes/handlers"
+	"github.com/pradipbabar/ginkubernets/handlers"
 
 	"github.com/gin-gonic/gin"
 )
