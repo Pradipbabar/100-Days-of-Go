@@ -3,8 +3,9 @@ package main
 import (
 	"net/http"
 
+	"ginkubernetes/handlers"
+
 	"github.com/gin-gonic/gin"
-	"github.com/pradipbabar/ginkubernetes/handlers"
 )
 
 func SetupRoutes() *gin.Engine {
