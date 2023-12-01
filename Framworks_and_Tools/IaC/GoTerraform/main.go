@@ -22,7 +22,7 @@ func main() {
 		log.Fatalf("error installing Terraform: %s", err)
 	}
 
-	workingDir := "/path/to/working/dir"
+	workingDir := "./rowterra"
 	tf, err := tfexec.NewTerraform(workingDir, execPath)
 	if err != nil {
 		log.Fatalf("error running NewTerraform: %s", err)
@@ -31,6 +31,18 @@ func main() {
 	err = tf.Init(context.Background(), tfexec.Upgrade(true))
 	if err != nil {
 		log.Fatalf("error running Init: %s", err)
+	} else {
+		fmt.Println("terraform initialize")
+	}
+
+	err = tf.Apply(context.Background())
+	if err != nil {
+		log.Fatalf("error running Apply: %s", err)
+	}
+
+	err = tf.Destroy(context.Background())
+	if err != nil {
+		log.Fatalf("error running destroy: %s", err)
 	}
 
 	state, err := tf.Show(context.Background())
@@ -39,4 +51,5 @@ func main() {
 	}
 
 	fmt.Println(state.FormatVersion) // "0.1"
+
 }
