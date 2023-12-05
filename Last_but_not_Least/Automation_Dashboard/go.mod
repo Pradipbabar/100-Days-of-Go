@@ -1,4 +1,4 @@
-module autodash
+module github.com/Pradipbabar/autodash
 
 go 1.21.3
 

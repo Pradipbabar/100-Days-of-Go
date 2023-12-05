@@ -1,10 +1,9 @@
 /*
 Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-
 */
 package main
 
-import "autodash/cmd"
+import "github.com/Pradipbabar/autodash/cmd"
 
 func main() {
 	cmd.Execute()
