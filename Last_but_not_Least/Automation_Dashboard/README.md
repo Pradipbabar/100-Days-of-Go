@@ -48,12 +48,14 @@ The project is structured as follows:
 ## Getting Started
 
 1. **Clone the Repository:**
+
    ```bash
    git clone https://github.com/Pradipbabar/100-Days-of-Go.git
    cd Last_but_not_Least/Automation_Dashboard
    ```
 
 2. **Build and Run:**
+
    ```bash
    go build -o autodash
    ./autodash
