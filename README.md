@@ -51,6 +51,7 @@
 - Implement Prometheus and Grafana integration for monitoring, develop Grafana dashboards in Go, and establish advanced logging solutions
 
 ### Day 91-100: [Advanced Projects](/Last_but_not_Least/)
-- Build a scalable and secure RESTful API using JWT (JSON Web Tokens) for authentication and authorization.
-- Create a real-time data streaming application using technologies like Kafka or RabbitMQ with Go.
-- Develop a cloud-native application using Go and Kubernetes, focusing on scalability, resilience, and efficient resource management.
+- Develop a DevOps Automation Dashboard in Go, integrating Terraform and Packer for infrastructure management and custom script execution.
+2. Implement Jenkins CI/CD integration and enable deployment triggers directly from the dashboard.
+3. Integrate Docker SDK for Go and Kubernetes (client-go) for container orchestration with real-time Prometheus metrics and ELK logging solutions.
+4. Incorporate Grafana for analytics, ensuring extensibility through a modular design and a user-friendly interface for security checks and compliance monitoring.
