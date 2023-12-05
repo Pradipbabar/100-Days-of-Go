@@ -25,16 +25,16 @@
 - Learn about popular web frameworks such as Gin and Echo.
 - Build simple web applications using Go.
 
-### Day 26-30: [Finalizing Basics and Mini Projects](/Mini_Projects/)
+### Day 26-30: [Finalizing Basics and Mini Project](/Mini_Projects/)
 - Review all the concepts learned so far and solidify your understanding.
 - Work on small projects to apply the knowledge, such as building a simple CRUD (Create, Read, Update, Delete) application, a command-line tool, or a basic web application.
 
-### Day 31-45: [Intermediate Projects](/Intermediate_Project/)
+### Day 31-45: [Intermediate Project](/Intermediate_Project/)
 - Develop a blog web app using Go for efficient backend processing.
 - Utilize MySQL for structured storage and retrieval of blog data.
 - Implement a user-friendly web interface with responsive design using Go's web frameworks.
 
-### Day 46-60: [Advanced Projects](/Advanced_Project/)
+### Day 46-60: [Advanced Project](/Advanced_Project/)
 - Build a real-time chat application using WebSockets and Go.
 - Dockerize the application using docker-compose.
 - Deploy to minikube.
@@ -52,6 +52,6 @@
 
 ### Day 91-100: [Advanced Projects](/Last_but_not_Least/)
 - Develop a DevOps Automation Dashboard in Go, integrating Terraform and Packer for infrastructure management and custom script execution.
-2. Implement Jenkins CI/CD integration and enable deployment triggers directly from the dashboard.
-3. Integrate Docker SDK for Go and Kubernetes (client-go) for container orchestration with real-time Prometheus metrics and ELK logging solutions.
-4. Incorporate Grafana for analytics, ensuring extensibility through a modular design and a user-friendly interface for security checks and compliance monitoring.
+- Implement Jenkins CI/CD integration and enable deployment triggers directly from the dashboard.
+- Integrate Docker SDK for Go and Kubernetes (client-go) for container orchestration with real-time Prometheus metrics and ELK logging solutions.
+- Incorporate Grafana for analytics, ensuring extensibility through a modular design and a user-friendly interface for security checks and compliance monitoring.
