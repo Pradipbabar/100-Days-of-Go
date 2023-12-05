@@ -60,7 +60,7 @@
 - Integrate Go with Terraform, extend Ansible with Go modules, and use Packer with Go for Infrastructure as Code.
 - Implement Prometheus and Grafana integration for monitoring, develop Grafana dashboards in Go, and establish advanced logging solutions
 
-## Day 91-100: [Advanced Projects](/Last_but_not_Least/)
+## Day 91-100: [Exit Project](/Last_but_not_Least/)
 
 - Develop a DevOps Automation Dashboard in Go, integrating Terraform and Packer for infrastructure management and custom script execution.
 - Implement Jenkins CI/CD integration and enable deployment triggers directly from the dashboard.
