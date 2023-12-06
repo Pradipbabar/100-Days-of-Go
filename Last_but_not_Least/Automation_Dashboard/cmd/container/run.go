@@ -6,13 +6,13 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var showCmd = &cobra.Command{
-	Use:   "show",
-	Short: "show Container",
-	Long:  "show Container for your project.",
+var runCmd = &cobra.Command{
+	Use:   "run",
+	Short: "run Container",
+	Long:  "Run Container for your project.",
 	Run: func(cmd *cobra.Command, args []string) {
 
-		fmt.Println("showing Running Container...")
+		fmt.Println("Running Container...")
 		// Implement initialization logic here
 
 	},

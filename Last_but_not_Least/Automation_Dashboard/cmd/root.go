@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/Pradipbabar/autodash/cmd/container"
 	"github.com/Pradipbabar/autodash/cmd/infra"
 
 	"github.com/spf13/cobra"
@@ -38,5 +39,7 @@ func Execute() {
 func configureCommands() error {
 	// Add additional configuration logic here
 	RootCmd.AddCommand(infra.InfraCmd)
+	RootCmd.AddCommand(container.ContainerCmd)
+
 	return nil
 }
