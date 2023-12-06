@@ -62,7 +62,7 @@
 
 ## Day 91-100: [Exit Project](/Last_but_not_Least/)
 
-- Develop a DevOps Automation Dashboard in Go, integrating Terraform and Packer for infrastructure management and custom script execution.
-- Implement Jenkins CI/CD integration and enable deployment triggers directly from the dashboard.
-- Integrate Docker SDK for Go and Kubernetes (client-go) for container orchestration with real-time Prometheus metrics and ELK logging solutions.
-- Incorporate Grafana for analytics, ensuring extensibility through a modular design and a user-friendly interface for security checks and compliance monitoring.
+- Set up a Go CLI application using Cobra for Terraform and Docker automation tasks.
+- Implement Terraform and Docker commands with `tfexec` and Docker SDK for Go.
+- Enhance CLI with options, flags, error handling, and interactive prompts.
+- Finalize the project with thorough testing, documentation, and version control.
