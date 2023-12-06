@@ -41,28 +41,30 @@ func ShowTerraform() error {
 		log.Fatalf("error installing Terraform: %s", err)
 	}
 
-	workingdir, err := os.Getwd()
+	workingDir, err := os.Getwd()
 	if err != nil {
 		fmt.Println("Error getting working directory:", err)
 		return err
 	}
 
 	// Initialize Terraform in the specified directory
-	tf, err := tfexec.NewTerraform(workingdir, execPath)
+	tf, err := tfexec.NewTerraform(workingDir, execPath)
 	if err != nil {
 		log.Fatalf("error running NewTerraform: %s", err)
 	}
+
 	state, err := tf.Show(context.Background())
 	if err != nil {
-		log.Fatalf("error running deploy: %s", err)
+		log.Fatalf("error getting Terraform state: %s", err)
 	}
+
 	fmt.Println(state)
 
 	var terraformState map[string]interface{}
-	err := json.Unmarshal([]byte(state), &terraformState)
+	err = json.Unmarshal([]byte(state), &terraformState)
 	if err != nil {
 		fmt.Println("Error unmarshalling JSON:", err)
-		return
+		return err
 	}
 
 	// Flatten Terraform state into key-value pairs
