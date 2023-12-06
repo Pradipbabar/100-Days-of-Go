@@ -12,16 +12,7 @@ var InfraCmd = &cobra.Command{
 	Short: "Manage Infrastructure",
 	Long:  "Commands for managing infrastructure.",
 	Run: func(cmd *cobra.Command, args []string) {
-		workingDir, err := os.Getwd()
-	if err != nil {
-		log.Fatalf("Error getting working directory: %s", err)
-	}
-
-	// Initialize Terraform instance
-	tf, err = tfexec.NewTerraform(workingDir, "terraform")
-	if err != nil {
-		log.Fatalf("Error running NewTerraform: %s", err)
-	}
+		fmt.Println("Specify a subcommand for infrastructure management.")
 	},
 }
 
