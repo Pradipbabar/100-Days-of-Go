@@ -1,36 +1,43 @@
-package main
+package terraform
 
 import (
+	"context"
 	"fmt"
+	"log"
 	"os"
 
-	"github.com/hashicorp/terraform/exec"
-	"github.com/spf13/cobra"
+	"github.com/hashicorp/go-version"
+	"github.com/hashicorp/hc-install/product"
+	"github.com/hashicorp/hc-install/releases"
+	"github.com/hashicorp/terraform-exec/tfexec"
 )
-func initTerraform() error {
-	// Create a new Terraform executor
-	executor := exec.NewExecutor()
 
-	// Initialize Terraform in the specified directory
-	initArgs := []string{"init"}
-	initOpts := &exec.Options{
-		WorkingDir, err := os.Getwd()
+func InitTerraform() error {
+	installer := &releases.ExactVersion{
+		Product: product.Terraform,
+		Version: version.Must(version.NewVersion("1.0.6")),
+	}
+
+	execPath, err := installer.Install(context.Background())
+	if err != nil {
+		log.Fatalf("error installing Terraform: %s", err)
+	}
+
+	workingdir, err := os.Getwd()
 	if err != nil {
 		fmt.Println("Error getting working directory:", err)
-		return
-  },
+		return err
 	}
 
-	// Execute the Terraform init command
-	initExitCode, err := executor.Run(initArgs, initOpts)
+	// Initialize Terraform in the specified directory
+	tf, err := tfexec.NewTerraform(workingdir, execPath)
 	if err != nil {
-		return fmt.Errorf("failed to execute Terraform init: %v", err)
+		log.Fatalf("error running NewTerraform: %s", err)
 	}
-
-	if initExitCode != 0 {
-		return fmt.Errorf("Terraform init exited with non-zero status code: %d", initExitCode)
+	err = tf.Init(context.Background(), tfexec.Upgrade(true))
+	if err != nil {
+		log.Fatalf("error running Init: %s", err)
 	}
-
 	fmt.Println("Terraform initialized successfully.")
 	return nil
-  }
+}
