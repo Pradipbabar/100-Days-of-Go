@@ -2,7 +2,7 @@
 
 ## DevOps Automation Dashboard Roadmap
 
-### Day 90:
+### Day 90
 
 **Task:** Set up the project structure.
 
@@ -10,7 +10,7 @@
 2. Initialize a Go module.
 3. Set up the main application file.
 
-### Day 91:
+### Day 91
 
 **Task:** Implement the basic Cobra CLI framework.
 
@@ -18,7 +18,7 @@
 2. Define the root command for your CLI application.
 3. Add a simple command that prints a welcome message.
 
-### Day 92:
+### Day 92
 
 **Task:** Implement Terraform initialization command.
 
@@ -26,7 +26,7 @@
 2. Use the `github.com/hashicorp/terraform-exec/tfexec` library to run Terraform initialization.
 3. Test the initialization command.
 
-### Day 93:
+### Day 93
 
 **Task:** Implement Terraform apply and destroy commands.
 
@@ -34,7 +34,7 @@
 2. Utilize the `tfexec` library to run Terraform apply and destroy.
 3. Test the apply and destroy commands.
 
-### Day 94:
+### Day 94
 
 **Task:** Implement Docker build and run commands.
 
@@ -42,7 +42,7 @@
 2. Utilize the Docker SDK for Go (`github.com/docker/docker/client`) for building and running Docker images.
 3. Test the build and run commands.
 
-### Day 95:
+### Day 95
 
 **Task:** Add options and flags.
 
@@ -50,7 +50,7 @@
 2. Allow users to provide input parameters such as Terraform configuration files, Dockerfile paths, etc.
 3. Update your commands to use the provided input.
 
-### Day 96:
+### Day 96
 
 **Task:** Implement a combined task.
 
@@ -58,7 +58,7 @@
 2. Allow users to execute Terraform commands followed by Docker commands or vice versa.
 3. Test the combined task.
 
-### Day 97:
+### Day 97
 
 **Task:** Implement error handling and logging.
 
@@ -66,7 +66,7 @@
 2. Implement logging to track the execution flow and errors.
 3. Ensure that users receive meaningful error messages.
 
-### Day 98:
+### Day 98
 
 **Task:** Add support for environment variables.
 
@@ -74,7 +74,7 @@
 2. Document the supported environment variables.
 3. Update your commands to use environment variables where applicable.
 
-### Day 99:
+### Day 99
 
 **Task:** Implement command-line prompts.
 
@@ -82,7 +82,7 @@
 2. Add interactive prompts for critical information, such as confirming destructive actions.
 3. Test the interactive prompts.
 
-### Day 100:
+### Day 100
 
 **Task:** Documentation and Finalization.
 
@@ -91,5 +91,3 @@
 3. Ensure that your code is well-documented.
 4. Test your application thoroughly.
 5. Celebrate the completion of your CLI application!
-
-Remember to commit your changes regularly, write meaningful commit messages, and consider pushing your project to a version control system (e.g., GitHub) for easy collaboration and future updates.
