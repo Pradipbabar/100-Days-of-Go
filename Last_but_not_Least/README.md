@@ -2,54 +2,94 @@
 
 ## DevOps Automation Dashboard Roadmap
 
-### Day 90-92: Infrastructure Management
+### Day 90:
 
-1. **Day 90: Setup Go Project**
-   - Initialize the Go project for the DevOps Automation Dashboard.
-   - Set up the project structure.
+**Task:** Set up the project structure.
 
-2. **Day 91: Terraform Integration**
-   - Integrate Terraform with Go for infrastructure management.
-   - Develop functions to provision and manage infrastructure.
+1. Create a new Go project for your CLI application.
+2. Initialize a Go module.
+3. Set up the main application file.
 
-3. **Day 92: Packer Integration**
-   - Implement Packer integration for building custom machine images.
-   - Ensure seamless interaction with Packer using Go.
+### Day 91:
 
-### Day 93-95: Deployment Automation
+**Task:** Implement the basic Cobra CLI framework.
 
-1. **Day 93: Jenkins CI/CD Integration**
-   - Configure Go project for Jenkins CI/CD pipelines.
-   - Establish automated deployment workflows.
+1. Integrate the Cobra library into your project.
+2. Define the root command for your CLI application.
+3. Add a simple command that prints a welcome message.
 
-2. **Day 94: Deployment Triggers**
-   - Implement deployment triggers within the dashboard.
-   - Enable users to initiate deployments with a single click.
+### Day 92:
 
-3. **Day 95: Continuous Improvement**
-   - Review and optimize CI/CD workflows.
-   - Enhance deployment processes based on feedback.
+**Task:** Implement Terraform initialization command.
 
-### Day 96-98: Container Orchestration
+1. Add a Cobra subcommand for initializing Terraform.
+2. Use the `github.com/hashicorp/terraform-exec/tfexec` library to run Terraform initialization.
+3. Test the initialization command.
 
-1. **Day 96: Docker SDK for Go**
-   - Integrate Docker SDK for Go.
-   - Develop features for managing Docker containers, images, and networks.
+### Day 93:
 
-2. **Day 97: Kubernetes Integration**
-   - Use client-go to interact with Kubernetes clusters.
-   - Implement functionalities for container orchestration.
+**Task:** Implement Terraform apply and destroy commands.
 
-3. **Day 98: Monitoring and Logging**
-   - Integrate Prometheus for real-time system metrics.
-   - Implement logging solutions (ELK) for centralized log management.
+1. Add Cobra subcommands for applying and destroying Terraform configurations.
+2. Utilize the `tfexec` library to run Terraform apply and destroy.
+3. Test the apply and destroy commands.
 
-### Day 99-100: Analytics and Extensibility
+### Day 94:
 
-1. **Day 99: Grafana Integration**
-    - Configure Grafana dashboards for analytics.
-    - Visualize key metrics and trends.
+**Task:** Implement Docker build and run commands.
 
-2. **Day 100: Modular Design and Security**
-    - Design a modular architecture for easy extensibility.
-    - Implement security checks and compliance monitoring features.
+1. Add Cobra subcommands for building and running Docker images.
+2. Utilize the Docker SDK for Go (`github.com/docker/docker/client`) for building and running Docker images.
+3. Test the build and run commands.
+
+### Day 95:
+
+**Task:** Add options and flags.
+
+1. Enhance your commands by adding options and flags.
+2. Allow users to provide input parameters such as Terraform configuration files, Dockerfile paths, etc.
+3. Update your commands to use the provided input.
+
+### Day 96:
+
+**Task:** Implement a combined task.
+
+1. Create a new Cobra command that orchestrates Terraform and Docker tasks.
+2. Allow users to execute Terraform commands followed by Docker commands or vice versa.
+3. Test the combined task.
+
+### Day 97:
+
+**Task:** Implement error handling and logging.
+
+1. Enhance your CLI application with proper error handling.
+2. Implement logging to track the execution flow and errors.
+3. Ensure that users receive meaningful error messages.
+
+### Day 98:
+
+**Task:** Add support for environment variables.
+
+1. Allow users to configure certain parameters using environment variables.
+2. Document the supported environment variables.
+3. Update your commands to use environment variables where applicable.
+
+### Day 99:
+
+**Task:** Implement command-line prompts.
+
+1. Use a library like `github.com/AlecAivazis/survey` to prompt users for input.
+2. Add interactive prompts for critical information, such as confirming destructive actions.
+3. Test the interactive prompts.
+
+### Day 100:
+
+**Task:** Documentation and Finalization.
+
+1. Create a README.md file explaining how to use your CLI application.
+2. Document command usage, flags, environment variables, and examples.
+3. Ensure that your code is well-documented.
+4. Test your application thoroughly.
+5. Celebrate the completion of your CLI application!
+
+Remember to commit your changes regularly, write meaningful commit messages, and consider pushing your project to a version control system (e.g., GitHub) for easy collaboration and future updates.
