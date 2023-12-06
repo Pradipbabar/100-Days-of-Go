@@ -11,6 +11,7 @@ import (
 	"github.com/hashicorp/hc-install/product"
 	"github.com/hashicorp/hc-install/releases"
 	"github.com/hashicorp/terraform-exec/tfexec"
+	"github.com/hashicorp/terraform-exec/tfjson"
 )
 
 // FlattenJSON flattens a nested JSON structure into a key-value map.
@@ -53,15 +54,26 @@ func ShowTerraform() error {
 		log.Fatalf("error running NewTerraform: %s", err)
 	}
 
+	// Obtain Terraform state as *tfjson.State
 	state, err := tf.Show(context.Background())
 	if err != nil {
 		log.Fatalf("error getting Terraform state: %s", err)
 	}
 
-	fmt.Println(state)
+	// Convert *tfjson.State to string and print
+	stateString := state.String()
+	fmt.Println(stateString)
 
+	// Alternatively, convert *tfjson.State to byte slice and print
+	stateBytes, err := state.MarshalJSON()
+	if err != nil {
+		log.Fatalf("error converting Terraform state to JSON: %s", err)
+	}
+	fmt.Println(string(stateBytes))
+
+	// Further processing of Terraform state...
 	var terraformState map[string]interface{}
-	err = json.Unmarshal([]byte(state), &terraformState)
+	err = json.Unmarshal(stateBytes, &terraformState)
 	if err != nil {
 		fmt.Println("Error unmarshalling JSON:", err)
 		return err
@@ -75,5 +87,6 @@ func ShowTerraform() error {
 	for key, value := range flattenedState {
 		fmt.Printf("%s: %v\n", key, value)
 	}
+
 	return nil
 }
