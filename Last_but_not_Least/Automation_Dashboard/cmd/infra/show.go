@@ -2,6 +2,7 @@ package infra
 
 import (
 	"fmt"
+
 	"github.com/Pradipbabar/autodash/pkg/infrastructure/terraform"
 
 	"github.com/spf13/cobra"
@@ -16,12 +17,7 @@ var showCmd = &cobra.Command{
 		if err != nil {
 			fmt.Println("Error getting working directory:", err)
 
-		} else {
-			fmt.Println("Showing infrastructure...")
-			// Implement initialization logic here
 		}
-		fmt.Println("showing infrastructure...")
-		// Implement initialization logic here
 
 	},
 }
