@@ -2,10 +2,10 @@ package terraform
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"log"
 	"os"
-	"encoding/json"
 
 	"github.com/hashicorp/go-version"
 	"github.com/hashicorp/hc-install/product"
@@ -30,7 +30,6 @@ func FlattenJSON(data map[string]interface{}, parentKey string, flattened map[st
 	}
 }
 
-
 func ShowTerraform() error {
 	installer := &releases.ExactVersion{
 		Product: product.Terraform,
@@ -53,12 +52,12 @@ func ShowTerraform() error {
 	if err != nil {
 		log.Fatalf("error running NewTerraform: %s", err)
 	}
-	state, err = tf.Show(context.Background())
+	state, err := tf.Show(context.Background())
 	if err != nil {
 		log.Fatalf("error running deploy: %s", err)
 	}
 	fmt.Println(state)
-	
+
 	var terraformState map[string]interface{}
 	err := json.Unmarshal([]byte(state), &terraformState)
 	if err != nil {
