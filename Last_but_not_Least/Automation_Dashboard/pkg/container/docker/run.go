@@ -88,3 +88,14 @@ func getAppPath() string {
 	}
 	return filepath.Dir(exePath)
 }
+func copyToContainer(ctx context.Context, cli *client.Client, containerID, sourcePath, targetPath string) error {
+	source, err := os.Open(sourcePath)
+	if err != nil {
+		return err
+	}
+	defer source.Close()
+
+	return cli.CopyToContainer(ctx, containerID, targetPath, source, types.CopyToContainerOptions{
+		AllowOverwriteDirWithFile: true,
+	})
+}
