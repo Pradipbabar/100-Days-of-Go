@@ -12,40 +12,40 @@ func ListContainer() error {
 	ctx := context.Background()
 	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
 	if err != nil {
-		panic(err)
 		return err
 	}
 	defer cli.Close()
 
 	containers, err := cli.ContainerList(ctx, types.ContainerListOptions{})
 	if err != nil {
-		panic(err)
 		return err
 	}
 
 	for _, container := range containers {
 		fmt.Println(container.ID)
-		return nil
+
 	}
+	return nil
 }
 
 func ListImage() error {
 	ctx := context.Background()
 	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
 	if err != nil {
-		panic(err)
+
 		return err
 	}
 	defer cli.Close()
 
 	images, err := cli.ImageList(ctx, types.ImageListOptions{})
 	if err != nil {
-		panic(err)
+		
 		return err
 	}
 
 	for _, image := range images {
 		fmt.Println(image.ID)
-		return nil
+
 	}
+	return nil
 }
