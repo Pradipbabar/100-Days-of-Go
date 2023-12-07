@@ -15,11 +15,12 @@ import (
 	"github.com/docker/docker/client"
 )
 
-func RunGoApplication(port int, containerName string) {
+func RunGoApplication(port int, containerName string) error {
 	ctx := context.Background()
 	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
 	if err != nil {
 		panic(err)
+		return err
 	}
 	defer cli.Close()
 
@@ -29,6 +30,7 @@ func RunGoApplication(port int, containerName string) {
 	out, err := cli.ImagePull(ctx, imageName, types.ImagePullOptions{})
 	if err != nil {
 		panic(err)
+		return err
 	}
 	defer out.Close()
 	io.Copy(os.Stdout, out)
@@ -74,6 +76,7 @@ func RunGoApplication(port int, containerName string) {
 	}
 
 	fmt.Printf("Go application running in container '%s' on port %d\n", containerName, port)
+	return nil
 }
 
 // Helper function to get the path to the Go application

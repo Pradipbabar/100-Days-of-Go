@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
+	"github.com/Pradipbabar/autodash/pkg/container/docker"
 )
 
 var (
@@ -19,17 +20,31 @@ var deleteCmd = &cobra.Command{
        // Use the flag values in your logic
 		if deleteimageNameFlag != "" {
 			fmt.Printf("Deleting container with image name: %s\n", deleteimageNameFlag)
+			err := docker.DeleteImage(deleteimageNameFlag)
+			if err != nil {
+				fmt.Println("Error ", err)
+	
+			} else {
+				fmt.Println("Deleting Image...")
+				
+			}
 		} else {
 			fmt.Println("Please provide an image name to delete a container.")
 		}
 
 		if deletecontainerNameFlag != "" {
 			fmt.Printf("Deleting container with name: %s\n", deletecontainerNameFlag)
+			err := docker.DeleteContainer(deletecontainerNameFlag)
+			if err != nil {
+				fmt.Println("Error ", err)
+	
+			} else {
+				fmt.Println("Deleting Container...")
+				
+			}
 		} else {
 			fmt.Println("Please provide a container name to delete.")
 		}
-		fmt.Println("deleting Container...")
-		// Implement initialization logic here
 
 	},
 }

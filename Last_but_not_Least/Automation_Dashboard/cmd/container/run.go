@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
+	"github.com/Pradipbabar/autodash/pkg/container/docker"
 )
 
 var (
@@ -19,13 +20,18 @@ var runCmd = &cobra.Command{
         // Use the flag values in your logic
 		if runportFlag > 0 && runcontainerNameFlag != ""{
 			fmt.Printf("Running container %s with port: %d\n", runcontainerNameFlag, runportFlag)
+			err := docker.RunGoApplication(runportFlag, runcontainerNameFlag)
+			if err != nil {
+				fmt.Println("Error ", err)
+	
+			} else {
+				fmt.Println("Running Container...")
+				
+			}
+			
 		} else {
 			fmt.Println("Please provide a valid port number and Container Name to run a container.")
 		}
-
-		fmt.Println("Running Container...")
-		// Implement initialization logic here
-
 	},
 }
 func init() {

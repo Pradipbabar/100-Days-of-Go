@@ -9,17 +9,19 @@ import (
 	"github.com/docker/docker/client"
 )
 
-func DeleteImage(imageName string) {
+func DeleteImage(imageName string) error {
 	ctx := context.Background()
 	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
 	if err != nil {
 		panic(err)
+		return err
 	}
 	defer cli.Close()
 
 	images, err := cli.ImageList(ctx, types.ImageListOptions{})
 	if err != nil {
 		panic(err)
+		return err
 	}
 
 	for _, image := range images {
@@ -30,28 +32,32 @@ func DeleteImage(imageName string) {
 				_, err := cli.ImageRemove(ctx, image.ID, types.ImageRemoveOptions{})
 				if err != nil {
 					panic(err)
+					return err
 				}
 				fmt.Println("Success")
-				return // Exit the loop after deleting the image
+				return nil// Exit the loop after deleting the image
 			}
 		}
 	}
 
 	// If the loop completes without finding the image, print a message
 	fmt.Println("Image not found:", imageName)
+	return err
 }
 
-func DeleteContainer(containerName string) {
+func DeleteContainer(containerName string) error {
 	ctx := context.Background()
 	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
 	if err != nil {
 		panic(err)
+		return err
 	}
 	defer cli.Close()
 
 	containers, err := cli.ContainerList(ctx, types.ContainerListOptions{})
 	if err != nil {
 		panic(err)
+		return err
 	}
 
 	for _, container := range containers {
@@ -62,10 +68,11 @@ func DeleteContainer(containerName string) {
 				panic(err)
 			}
 			fmt.Println("Success")
-			return // Exit the loop after deleting the container
+			return nil // Exit the loop after deleting the container
 		}
 	}
 
 	// If the loop completes without finding the container, print a message
 	fmt.Println("Container not found:", containerName)
+	return err
 }

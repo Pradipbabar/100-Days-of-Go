@@ -20,12 +20,32 @@ var showCmd = &cobra.Command{
 // Check the values of bool flags and execute logic accordingly
 		if showAllFlag {
 			fmt.Println("Showing details for all containers...")
+			err := docker.ListContainer()
+			if err != nil {
+				fmt.Println("Error ", err)
+	
+			}
+			err := docker.ListImage()
+			if err != nil {
+				fmt.Println("Error ", err)
+	
+			}
 		}
 		if containerFlag {
 			fmt.Printf("Showing details for container: \n" )
+			err := docker.ListContainer()
+			if err != nil {
+				fmt.Println("Error ", err)
+	
+			}
 		}
 		if imageFlag {
 			fmt.Printf("Showing details for image: \n")
+			err := docker.ListImage()
+			if err != nil {
+				fmt.Println("Error ", err)
+	
+			}
 		} else {
 			fmt.Println ("error")
 		}
