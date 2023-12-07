@@ -1,3 +1,4 @@
+// docker/docker.go
 package docker
 
 import (
@@ -5,13 +6,16 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"os/exec"
+	"path/filepath"
+	"text/template"
 
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/client"
 )
 
-func RunContainer() {
+func RunGoApplication(port int, containerName string) {
 	ctx := context.Background()
 	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
 	if err != nil {
@@ -19,8 +23,9 @@ func RunContainer() {
 	}
 	defer cli.Close()
 
-	imageName := "bfirsh/reticulate-splines"
+	imageName := "golang:latest" // Assuming you want to use the official Golang image
 
+	// Pull the Golang image
 	out, err := cli.ImagePull(ctx, imageName, types.ImagePullOptions{})
 	if err != nil {
 		panic(err)
@@ -28,16 +33,54 @@ func RunContainer() {
 	defer out.Close()
 	io.Copy(os.Stdout, out)
 
-	resp, err := cli.ContainerCreate(ctx, &container.Config{
-		Image: imageName,
-	}, nil, nil, nil, "")
+	// Build the Go application
+	buildCmd := exec.Command("go", "build", "-o", "app")
+	buildCmd.Dir = getAppPath() // Get the path to the Go application
+	buildCmd.Stdout = os.Stdout
+	buildCmd.Stderr = os.Stderr
+	if err := buildCmd.Run(); err != nil {
+		panic(err)
+	}
+
+	// Get the working directory
+	workingDir, err := os.Getwd()
 	if err != nil {
 		panic(err)
 	}
 
-	if err := cli.ContainerStart(ctx, resp.ID, types.ContainerStartOptions{}); err != nil {
+	// Create a container
+	resp, err := cli.ContainerCreate(ctx, &container.Config{
+		Image: imageName,
+		Cmd:   []string{"./app"}, // Command to run the built Go application
+	}, nil, nil, nil, containerName)
+	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println(resp.ID)
+	// Copy the built Go application into the container
+	buildFilePath := filepath.Join(workingDir, "app")
+	err = copyToContainer(ctx, cli, resp.ID, buildFilePath, "/app")
+	if err != nil {
+		panic(err)
+	}
+
+	// Start the container
+	if err := cli.ContainerStart(ctx, resp.ID, types.ContainerStartOptions{
+		PortBindings: map[nat.Port][]nat.PortBinding{
+			nat.Port(fmt.Sprintf("%d/tcp", port)): {{HostIP: "0.0.0.0", HostPort: fmt.Sprintf("%d", port)}},
+		},
+	}); err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("Go application running in container '%s' on port %d\n", containerName, port)
+}
+
+// Helper function to get the path to the Go application
+func getAppPath() string {
+	exePath, err := os.Executable()
+	if err != nil {
+		panic(err)
+	}
+	return filepath.Dir(exePath)
 }
