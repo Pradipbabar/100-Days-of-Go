@@ -22,10 +22,10 @@ var showCmd = &cobra.Command{
 			fmt.Println("Showing details for all containers...")
 		}
 		if containerFlag {
-			fmt.Printf("Showing details for container: %s\n", containerNameFlag)
+			fmt.Printf("Showing details for container: \n" )
 		}
 		if imageFlag {
-			fmt.Printf("Showing details for image: %s\n", imageNameFlag)
+			fmt.Printf("Showing details for image: \n")
 		} else {
 			fmt.Println ("error")
 		}

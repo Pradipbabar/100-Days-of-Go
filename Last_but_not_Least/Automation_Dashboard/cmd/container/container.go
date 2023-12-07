@@ -21,5 +21,6 @@ func init() {
 	ContainerCmd.AddCommand(runCmd)
 	ContainerCmd.AddCommand(showCmd)
 	ContainerCmd.AddCommand(deleteCmd)
+	ContainerCmd.AddCommand(stopCmd)
 
 }
