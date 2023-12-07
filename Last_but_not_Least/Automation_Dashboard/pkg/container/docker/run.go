@@ -69,7 +69,7 @@ func RunGoApplication(port int, containerName string) error {
 
 	// Copy the built Go application into the container
 	buildFilePath := filepath.Join(workingDir, "app")
-	err = copyToContainer(ctx, cli, resp.ID, buildFilePath, "/app")
+	err = copyToContainer(ctx, cli, resp.ID, buildFilePath, "./app")
 	if err != nil {
 		return err
 	}
@@ -89,7 +89,7 @@ func getAppPath() string {
 	if err != nil {
 		panic(err)
 	}
-	return filepath.Dir(exePath)
+	return exePath
 }
 
 // Helper function to copy files or directories from the host to a container
