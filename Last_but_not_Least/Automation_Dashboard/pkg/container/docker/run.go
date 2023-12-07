@@ -1,4 +1,4 @@
-// docker/docker.go
+// // docker/docker.go
 package docker
 
 import (
@@ -11,9 +11,8 @@ import (
 
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
-	"github.com/docker/docker/api/types/mount"
-	"github.com/docker/docker/api/types/nat"
 	"github.com/docker/docker/client"
+	"github.com/docker/go-connections/nat"
 )
 
 func RunGoApplication(port int, containerName string) error {

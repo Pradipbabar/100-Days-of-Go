@@ -12,12 +12,14 @@ func ListContainer() error {
 	ctx := context.Background()
 	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
 	if err != nil {
+
 		return err
 	}
 	defer cli.Close()
 
 	containers, err := cli.ContainerList(ctx, types.ContainerListOptions{})
 	if err != nil {
+
 		return err
 	}
 
@@ -39,7 +41,7 @@ func ListImage() error {
 
 	images, err := cli.ImageList(ctx, types.ImageListOptions{})
 	if err != nil {
-		
+
 		return err
 	}
 
