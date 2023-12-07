@@ -1,4 +1,4 @@
-// // docker/docker.go
+// docker/docker.go
 package docker
 
 import (
@@ -11,25 +11,26 @@ import (
 
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
+	"github.com/docker/docker/api/types/mount"
 	"github.com/docker/docker/client"
+	"github.com/docker/docker/api/types/network"
 	"github.com/docker/go-connections/nat"
 )
 
+// RunGoApplication runs a Go application in a Docker container
 func RunGoApplication(port int, containerName string) error {
 	ctx := context.Background()
 	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
 	if err != nil {
-		panic(err)
 		return err
 	}
 	defer cli.Close()
 
-	imageName := "golang:latest" // Assuming you want to use the official Golang image
+	imageName := "golang:latest"
 
 	// Pull the Golang image
 	out, err := cli.ImagePull(ctx, imageName, types.ImagePullOptions{})
 	if err != nil {
-		panic(err)
 		return err
 	}
 	defer out.Close()
@@ -37,42 +38,47 @@ func RunGoApplication(port int, containerName string) error {
 
 	// Build the Go application
 	buildCmd := exec.Command("go", "build", "-o", "app")
-	buildCmd.Dir = getAppPath() // Get the path to the Go application
+	buildCmd.Dir = getAppPath()
 	buildCmd.Stdout = os.Stdout
 	buildCmd.Stderr = os.Stderr
 	if err := buildCmd.Run(); err != nil {
-		panic(err)
+		return err
 	}
 
 	// Get the working directory
 	workingDir, err := os.Getwd()
 	if err != nil {
-		panic(err)
+		return err
 	}
 
 	// Create a container
 	resp, err := cli.ContainerCreate(ctx, &container.Config{
 		Image: imageName,
-		Cmd:   []string{"./app"}, // Command to run the built Go application
-	}, nil, nil, nil, containerName)
+		Cmd:   []string{"./app"},
+	}, &container.HostConfig{
+		PortBindings: nat.PortMap{
+			nat.Port(fmt.Sprintf("%d/tcp", port)): []nat.PortBinding{
+				{
+					HostIP:   "0.0.0.0",
+					HostPort: fmt.Sprintf("%d", port),
+				},
+			},
+		},
+	}, &network.NetworkingConfig{}, containerName)
 	if err != nil {
-		panic(err)
+		return err
 	}
 
 	// Copy the built Go application into the container
 	buildFilePath := filepath.Join(workingDir, "app")
 	err = copyToContainer(ctx, cli, resp.ID, buildFilePath, "/app")
 	if err != nil {
-		panic(err)
+		return err
 	}
 
 	// Start the container
-	if err := cli.ContainerStart(ctx, resp.ID, types.ContainerStartOptions{
-		PortBindings: map[nat.Port][]nat.PortBinding{
-			nat.Port(fmt.Sprintf("%d/tcp", port)): {{HostIP: "0.0.0.0", HostPort: fmt.Sprintf("%d", port)}},
-		},
-	}); err != nil {
-		panic(err)
+	if err := cli.ContainerStart(ctx, resp.ID, types.ContainerStartOptions{}); err != nil {
+		return err
 	}
 
 	fmt.Printf("Go application running in container '%s' on port %d\n", containerName, port)
@@ -87,6 +93,8 @@ func getAppPath() string {
 	}
 	return filepath.Dir(exePath)
 }
+
+// Helper function to copy files or directories from the host to a container
 func copyToContainer(ctx context.Context, cli *client.Client, containerID, sourcePath, targetPath string) error {
 	source, err := os.Open(sourcePath)
 	if err != nil {
