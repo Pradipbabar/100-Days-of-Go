@@ -5,10 +5,11 @@ import (
 	"fmt"
 
 	"github.com/docker/docker/api/types"
+	containertypes "github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/client"
 )
 
-func ListContainer() {
+func StopContainer() {
 	ctx := context.Background()
 	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
 	if err != nil {
@@ -22,24 +23,11 @@ func ListContainer() {
 	}
 
 	for _, container := range containers {
-		fmt.Println(container.ID)
-	}
-}
-
-func ListImage() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-
-	images, err := cli.ImageList(ctx, types.ImageListOptions{})
-	if err != nil {
-		panic(err)
-	}
-
-	for _, image := range images {
-		fmt.Println(image.ID)
+		fmt.Print("Stopping container ", container.ID[:10], "... ")
+		noWaitTimeout := 0 // to not wait for the container to exit gracefully
+		if err := cli.ContainerStop(ctx, container.ID, containertypes.StopOptions{Timeout: &noWaitTimeout}); err != nil {
+			panic(err)
+		}
+		fmt.Println("Success")
 	}
 }
