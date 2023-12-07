@@ -17,17 +17,12 @@ var runCmd = &cobra.Command{
 	Long:  "Run Container for your project.",
 	Run: func(cmd *cobra.Command, args []string) {
         // Use the flag values in your logic
-		if portFlag > 0 {
-			fmt.Printf("Running container with port: %d\n", portFlag)
+		if portFlag > 0 && containerNameFlag != ""{
+			fmt.Printf("Running container %s with port: %d\n", containerNameFlag, portFlag)
 		} else {
-			fmt.Println("Please provide a valid port number to run a container.")
+			fmt.Println("Please provide a valid port number and Container Name to run a container.")
 		}
 
-		if containerNameFlag != "" {
-			fmt.Printf("Running container with name: %s\n", containerNameFlag)
-		} else {
-			fmt.Println("Please provide a container name.")
-		}
 		fmt.Println("Running Container...")
 		// Implement initialization logic here
 
