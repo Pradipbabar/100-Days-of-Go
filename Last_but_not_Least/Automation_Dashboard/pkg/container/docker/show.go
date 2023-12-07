@@ -24,9 +24,10 @@ func ListContainer() error {
 	}
 
 	for _, container := range containers {
-		fmt.Println(container.ID)
+		fmt.Printf("Image Id %s \n", container.ID)
 
 	}
+	fmt.Println("no container found")
 	return nil
 }
 
@@ -46,8 +47,9 @@ func ListImage() error {
 	}
 
 	for _, image := range images {
-		fmt.Println(image.ID)
+		fmt.Printf("Image Id %s \n", image.ID)
 
 	}
+	// fmt.Println("No image found")
 	return nil
 }

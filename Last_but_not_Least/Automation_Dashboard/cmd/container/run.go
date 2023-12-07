@@ -2,6 +2,7 @@ package container
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/Pradipbabar/autodash/pkg/container/docker"
 	"github.com/spf13/cobra"
@@ -30,6 +31,8 @@ var runCmd = &cobra.Command{
 			}
 
 		} else {
+			 wd, _ := os.Getwd()
+			fmt.Println(wd)
 			fmt.Println("Please provide a valid port number and Container Name to run a container.")
 		}
 	},

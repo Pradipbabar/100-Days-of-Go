@@ -85,7 +85,7 @@ func RunGoApplication(port int, containerName string) error {
 
 // Helper function to get the path to the Go application
 func getAppPath() string {
-	exePath, err := os.Executable()
+	exePath, err := os.Getwd()
 	if err != nil {
 		panic(err)
 	}
