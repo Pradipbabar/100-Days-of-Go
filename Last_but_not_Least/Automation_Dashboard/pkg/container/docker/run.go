@@ -11,9 +11,7 @@ import (
 
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
-	"github.com/docker/docker/api/types/mount"
 	"github.com/docker/docker/client"
-	"github.com/docker/docker/api/types/network"
 	"github.com/docker/go-connections/nat"
 )
 
@@ -53,22 +51,21 @@ func RunGoApplication(port int, containerName string) error {
 
 	// Create a container
 	resp, err := cli.ContainerCreate(ctx, &container.Config{
-    Image: imageName,
-    Cmd:   []string{"./app"},
-}, &container.HostConfig{
-    PortBindings: nat.PortMap{
-        nat.Port(fmt.Sprintf("%d/tcp", port)): []nat.PortBinding{
-            {
-                HostIP:   "0.0.0.0",
-                HostPort: fmt.Sprintf("%d", port),
-            },
-        },
-    },
-}, &network.NetworkingConfig{}, containerName)
-if err != nil {
-    return err
-}
-
+		Image: imageName,
+		Cmd:   []string{"./app"},
+	}, &container.HostConfig{
+		PortBindings: nat.PortMap{
+			nat.Port(fmt.Sprintf("%d/tcp", port)): []nat.PortBinding{
+				{
+					HostIP:   "0.0.0.0",
+					HostPort: fmt.Sprintf("%d", port),
+				},
+			},
+		},
+	}, nil, nil, containerName)
+	if err != nil {
+		return err
+	}
 
 	// Copy the built Go application into the container
 	buildFilePath := filepath.Join(workingDir, "app")
