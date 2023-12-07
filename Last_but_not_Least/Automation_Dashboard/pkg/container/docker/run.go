@@ -53,21 +53,22 @@ func RunGoApplication(port int, containerName string) error {
 
 	// Create a container
 	resp, err := cli.ContainerCreate(ctx, &container.Config{
-		Image: imageName,
-		Cmd:   []string{"./app"},
-	}, &container.HostConfig{
-		PortBindings: nat.PortMap{
-			nat.Port(fmt.Sprintf("%d/tcp", port)): []nat.PortBinding{
-				{
-					HostIP:   "0.0.0.0",
-					HostPort: fmt.Sprintf("%d", port),
-				},
-			},
-		},
-	}, &network.NetworkingConfig{}, containerName)
-	if err != nil {
-		return err
-	}
+    Image: imageName,
+    Cmd:   []string{"./app"},
+}, &container.HostConfig{
+    PortBindings: nat.PortMap{
+        nat.Port(fmt.Sprintf("%d/tcp", port)): []nat.PortBinding{
+            {
+                HostIP:   "0.0.0.0",
+                HostPort: fmt.Sprintf("%d", port),
+            },
+        },
+    },
+}, &network.NetworkingConfig{}, containerName)
+if err != nil {
+    return err
+}
+
 
 	// Copy the built Go application into the container
 	buildFilePath := filepath.Join(workingDir, "app")
