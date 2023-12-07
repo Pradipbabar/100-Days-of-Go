@@ -27,9 +27,17 @@ var showCmd = &cobra.Command{
 		if imageFlag {
 			fmt.Printf("Showing details for image: %s\n", imageNameFlag)
 		} else {
-			fmt.Println ()
+			fmt.Println ("error")
 		}
 		// Implement initialization logic here
 
 	},
+}
+
+func init() {
+	// Add bool flags to the show command
+	showCmd.Flags().BoolVarP(&showAllFlag, "all", "a", false, "Show details for all containers")
+	showCmd.Flags().BoolVarP(&containerFlag, "container", "c", false, "Show details for a specific container")
+	showCmd.Flags().BoolVarP(&imageFlag, "image", "i", false, "Show details for a specific image")
+
 }
