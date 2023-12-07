@@ -13,3 +13,4 @@ deploymentTarget = "gce"
 
 [nix]
 channel = "stable-23_05"
+
