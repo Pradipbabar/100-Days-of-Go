@@ -66,3 +66,24 @@
 - Implement Terraform and Docker commands with `tfexec` and Docker SDK for Go.
 - Enhance CLI with options, flags, error handling, and interactive prompts.
 - Finalize the project with thorough testing, documentation, and version control.
+
+## More to Explore
+
+- <https://www.youtube.com/playlist?list=PLujhHB_uAFJws6Vv5q1KDoaQ4YcpS9UOm>
+- <https://www.youtube.com/playlist?list=PLRAV69dS1uWQGDQoBYMZWKjzuhCaOnBpa>
+- <https://github.com/Pradumnasaraf/DevOps/tree/main/Go>
+- <https://www.youtube.com/playlist?list=PL8fnAiiuQeFtg3ztGNquEb4Oh-WZxVPUv>
+- <https://www.youtube.com/playlist?list=PL8fnAiiuQeFuXdwSc14GuLNkcffcrdwkn>
+- <https://www.youtube.com/playlist?list=PL5dTjWUk_cPYztKD7WxVFluHvpBNM28N9>
+- <https://www.youtube.com/playlist?list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q>
+- <https://www.youtube.com/@GolangDojo/playlists>
+- <https://www.golangprograms.com/go-language.html>
+- <https://github.com/hiteshchoudhary/golang>
+- <https://github.com/NerdCademyDev/golang>
+- <https://www.youtube.com/playlist?list=PLhfxuQVMs-nyyhZ_dL5rGfMVcRS5Fh6QZ>
+- <https://www.youtube.com/playlist?list=PLDZ_9qD1hkzOcKtXqDCMj625gX5LxXQUc>
+- <https://github.com/anthdm?tab=repositories>
+- <https://www.youtube.com/playlist?list=PL0xRBLFXXsP7-0IVCmoo2FEWBrQzfH2l8>
+- <https://www.youtube.com/playlist?list=PLJ2eCBnvv6JVQtnuKbtJSRu0OkuNicOeW>
+- <https://github.com/kingztech2019/go-blogbackend>
+- <https://www.youtube.com/playlist?list=PL5dTjWUk_cPaf5uSEmr8ilR-GtO6s7QJJ>
